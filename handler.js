@@ -65,7 +65,7 @@ module.exports = {
           if (!isNumber(user.level)) user.level = 0
           if (!isNumber(user.call)) user.call = 0
           if (!user.role) user.role = 'Bronze'
-          if (!('autolevelup' in user)) user.autolevelup = false
+          if (!('autolevelup' in user)) user.autolevelup = true
           if (!isNumber(user.pc)) user.pc = 0
           if (!isNumber(user.warning)) user.warning = 0
           if (!('pasangan' in user)) user.pasangan = ''
@@ -84,7 +84,7 @@ module.exports = {
           level: 0,
           call: 0,
           role: 'Bronze',
-          autolevelup: false,
+          autolevelup: true,
           pc: 0,
           warning: 0,
           pasangan: '',
@@ -94,29 +94,29 @@ module.exports = {
         if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
         if (chat) {
           if (!('isBanned' in chat)) chat.isBanned = false
-          if (!('welcome' in chat)) chat.welcome = false
-          if (!('detect' in chat)) chat.detect = false
+          if (!('welcome' in chat)) chat.welcome = true
+          if (!('detect' in chat)) chat.detect = true
           if (!('sWelcome' in chat)) chat.sWelcome = ''
           if (!('sBye' in chat)) chat.sBye = ''
           if (!('sPromote' in chat)) chat.sPromote = ''
           if (!('sDemote' in chat)) chat.sDemote = ''
           if (!('descUpdate' in chat)) chat.descUpdate = true
           if (!('stiker' in chat)) chat.stiker = false
-          if (!('delete' in chat)) chat.delete = false
+          if (!('delete' in chat)) chat.delete = true
           if (!('antiLink' in chat)) chat.antiLink = false
           if (!isNumber(chat.expired)) chat.expired = 0
           if (!('antiBadword' in chat)) chat.antiBadword = true
         } else global.db.data.chats[m.chat] = {
           isBanned: false,
-          welcome: false,
-          detect: false,
+          welcome: true,
+          detect: true,
           sWelcome: '',
           sBye: '',
           sPromote: '',
           sDemote: '',
           descUpdate: true,
           stiker: false,
-          delete: false,
+          delete: true,
           antiLink: false,
           expired: 0,
           antiBadword: true,
